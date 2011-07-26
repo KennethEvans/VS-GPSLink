@@ -104,7 +104,7 @@ void printCurrentTimeGPX(LPTSTR szTime)
 		_T("Sep"),_T("Oct"),_T("Nov"),_T("Dec")
 	};
 
-	// Get StyatemTime is UTC
+	// Get StyatemTime in UTC
 	GetSystemTime(&sTime);
 
 	// Print the result
