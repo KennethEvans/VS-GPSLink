@@ -1,4 +1,4 @@
-// Microsoft Visual C++ generated resource script.
+//Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -26,6 +26,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
 #endif //_WIN32
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
@@ -40,7 +41,7 @@ IDI_MAIN_ICON           ICON                    "GPSLink.ico"
 // Menu
 //
 
-IDM_MAIN_MENUBAR MENU 
+IDM_MAIN_MENUBAR MENU
 BEGIN
     POPUP "File"
     BEGIN
@@ -156,7 +157,7 @@ BEGIN
     END
 END
 
-IDM_MAPMENU MENU 
+IDM_MAPMENU MENU
 BEGIN
     POPUP "Map Options"
     BEGIN
@@ -203,7 +204,7 @@ BEGIN
     END
 END
 
-IDM_PVTMENU MENU 
+IDM_PVTMENU MENU
 BEGIN
     POPUP "PVT Options"
     BEGIN
@@ -212,7 +213,7 @@ BEGIN
     END
 END
 
-IDM_LVPOPUPMENU MENU 
+IDM_LVPOPUPMENU MENU
 BEGIN
     POPUP "Listview Popup"
     BEGIN
@@ -247,7 +248,7 @@ FONT 8, "Tahoma", 0, 0, 0x0
 BEGIN
     ICON            IDI_MAIN_ICON,IDI_ABOUT_ICON,7,6,20,20
     LTEXT           "GPSLink",IDC_STATIC,34,18,74,8,SS_NOPREFIX
-    LTEXT           "Copyright (C) 2001-2010",IDC_STATIC,34,85,98,8
+    LTEXT           "Copyright (C) 2001-2007",IDC_STATIC,34,85,98,8
     LTEXT           "written by Kenneth Evans, Jr.",IDC_STATIC,34,66,100,8
     LTEXT           "Version",IDC_VERSION,34,28,100,8
     LTEXT           "If this program works, it was",IDC_STATIC,34,55,100,8
@@ -259,7 +260,7 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_
 CAPTION "Progress"
 FONT 8, "Tahoma"
 BEGIN
-    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | WS_BORDER,5,19,140,10
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",0x1 | WS_BORDER,5,19,140,10
     CTEXT           "Static",IDC_PROGRESS_MSG,5,5,140,8
     PUSHBUTTON      "Cancel",IDCANCEL,55,35,38,10
 END
@@ -415,7 +416,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -498,12 +499,12 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
     "#ifndef APSTUDIO_INVOKED\r\n"
     "#include ""targetver.h""\r\n"
@@ -514,7 +515,7 @@ BEGIN
     "\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
     "\r\n"
     "\0"
@@ -529,8 +530,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,0,5,0
- PRODUCTVERSION 2,0,5,0
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -546,14 +547,14 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "Comments", "GPS Data and Mapping Program for Garmin eTrex"
-            VALUE "CompanyName", "kenevans.net"
+            VALUE "CompanyName", "Argonne National Laboratory"
             VALUE "FileDescription", "GPSLink"
-            VALUE "FileVersion", "2, 0, 5, 0"
+            VALUE "FileVersion", "2, 0, 0, 0"
             VALUE "InternalName", "GPSLink"
-            VALUE "LegalCopyright", "Copyright © 2001-2010"
+            VALUE "LegalCopyright", "Copyright © 2001-2008"
             VALUE "OriginalFilename", "GPSLink.exe"
             VALUE "ProductName", "GPSLink"
-            VALUE "ProductVersion", "2, 0, 5, 0"
+            VALUE "ProductVersion", "2, 0, 0, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -575,18 +576,18 @@ IDB_COMPASS             BITMAP                  "compass.bmp"
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_APP_TITLE           "GPSLink"
     IDS_APP_CLASS           "GPSLINK"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CAP_FILE            "File"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CAP_EDIT            "Edit"
     IDS_CAP_VIEW            "View"
@@ -594,17 +595,17 @@ BEGIN
     IDS_CAP_HELP            "Help"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CAP_MAPOPTIONS      "Map Options"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CAP_LVPOPUP         "Listview Popup"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CAP_PVTOPTIONS      "PVT Options"
 END
