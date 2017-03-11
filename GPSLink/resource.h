@@ -84,6 +84,8 @@
 #define IDC_GAMMAENTRY                  10059
 #define IDC_LIGHT                       10060
 #define IDC_MEDIUM                      10061
+#define IDC_COPYRIGHT                   10062
+#define IDC_AUTHOR                      10063
 #define ID_FILE                         40001
 #define ID_HELP                         40002
 #define ID_HELP_ABOUT                   40003
@@ -242,7 +244,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        120
 #define _APS_NEXT_COMMAND_VALUE         40158
-#define _APS_NEXT_CONTROL_VALUE         10062
+#define _APS_NEXT_CONTROL_VALUE         10064
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

@@ -1273,13 +1273,15 @@ void readGPXFile(TCHAR *szFileName)
 	// Instantiate the DOM parser
 	static const XMLCh gLS[]={ chLatin_L, chLatin_S, chNull };
 	DOMImplementation *impl=DOMImplementationRegistry::getDOMImplementation(gLS);
-	DOMBuilder *parser=((DOMImplementationLS*)impl)->createDOMBuilder(DOMImplementationLS::MODE_SYNCHRONOUS,0);
+	DOMLSParser       *parser = ((DOMImplementationLS*)impl)->createLSParser(DOMImplementationLS::MODE_SYNCHRONOUS, 0);
+	DOMConfiguration  *config = parser->getDomConfig();
 
-	parser->setFeature(XMLUni::fgDOMNamespaces,false);
-	parser->setFeature(XMLUni::fgXercesSchema,false);
-	parser->setFeature(XMLUni::fgXercesSchemaFullChecking,false);
-	parser->setFeature(XMLUni::fgDOMValidation, false);
-	parser->setFeature(XMLUni::fgDOMDatatypeNormalization, true);
+	config->setParameter(XMLUni::fgDOMNamespaces, false);
+	config->setParameter(XMLUni::fgXercesSchema, false);
+	config->setParameter(XMLUni::fgXercesHandleMultipleImports, true);
+	config->setParameter(XMLUni::fgXercesSchemaFullChecking, false);
+	config->setParameter(XMLUni::fgDOMValidate, false);
+	config->setParameter(XMLUni::fgDOMDatatypeNormalization, true);
 
 	// Setup the error handler
 #if 0
