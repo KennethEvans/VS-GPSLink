@@ -454,12 +454,11 @@ void readGPSLFile(TCHAR *szFileName)
 		token=strtok(line,strDelim);
 		// Name
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Waypoint name not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			name = token;
+		} else {
+			name = "[null]";
 		}
-		name=token;
 		// Latitude
 		token=strtok(NULL,strDelim);
 		if(!token) {
@@ -478,12 +477,11 @@ void readGPSLFile(TCHAR *szFileName)
 		longitude=atof(token);
 		// Altitude
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Waypoint altitude not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			altitude = atof(token);
+		} else {
+			altitude = 0;
 		}
-		altitude=atof(token);
 		// Symbol
 		token=strtok(NULL,strDelim);
 		if(!token) {
@@ -527,12 +525,11 @@ void readGPSLFile(TCHAR *szFileName)
 		token=strtok(line,strDelim);
 		// Name
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Route name not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if(token) {
+			name = token;
+		} else {
+			name = "[null]";
 		}
-		name=token;
 		route=new CRoute(FALSE,name);
 		if(!route) {
 			errMsg(_T("Line %d: Cannot create route [%s]:\n%s"),
@@ -553,10 +550,10 @@ void readGPSLFile(TCHAR *szFileName)
 		token=strtok(line,strDelim);
 		// Name
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Track name not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			name = token;
+		} else {
+			name = "[null]";
 		}
 		name=token;
 		track=new CTrack(FALSE,name);
@@ -577,12 +574,11 @@ void readGPSLFile(TCHAR *szFileName)
 		token=strtok(line,strDelim);
 		// Name
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Trackpoint name not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			name = token;
+		} else {
+			name = "<null>";
 		}
-		name=token;
 		// Decide if it a new track based on the first character
 		if(name[0] == 'C' || name[0] == 'c') startTrack=0;
 		else startTrack=1;
@@ -604,12 +600,11 @@ void readGPSLFile(TCHAR *szFileName)
 		longitude=atof(token);
 		// Altitude
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Trackpoint altitude not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			altitude = atof(token);
+		} else {
+			altitude = 0;
 		}
-		altitude=atof(token);
 		// Time
 		token=strtok(NULL,strDelim);
 		if(!token) {
@@ -994,12 +989,11 @@ void readG7ToWinFile(TCHAR *szFileName)
 		}
 		// Altitude
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Waypoint altitude not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			altitude = atof(token);
+		} else {
+			altitude = 0;
 		}
-		altitude=atof(token);
 		if(rteDataInProgress) {
 			// Route waypoint
 			if(route && !rteDataAborted) {
@@ -1179,13 +1173,12 @@ void readG7ToWinFile(TCHAR *szFileName)
 		sTime.wSecond=(WORD)atoi(token);
 		// Altitude
 		token=strtok(NULL,strDelim);
-		if(!token) {
-			errMsg(_T("Line %d: Waypoint altitude not found:\n%s"),
-				lineNum,szFileName);
-			goto CLEANUP;
+		if (token) {
+			altitude = atof(token);
+		} else {
+			altitude = 0;
 		}
-		altitude=atof(token);
-
+		
 		// Convert the time
 		gTime=convertSystemTimeToLong(sTime);
 		if(gTime >= 0) {

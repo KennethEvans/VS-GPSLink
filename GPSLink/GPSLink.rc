@@ -246,11 +246,11 @@ FONT 8, "Tahoma", 0, 0, 0x0
 BEGIN
     ICON            IDI_MAIN_ICON,IDI_ABOUT_ICON,7,6,20,20
     LTEXT           "GPSLink",IDC_STATIC,34,18,74,8,SS_NOPREFIX
-    LTEXT           "Copyright (C) 2001-2017",IDC_COPYRIGHT,34,85,98,8
-    LTEXT           "written by Kenneth Evans, Jr.",IDC_AUTHOR,34,66,100,8
     LTEXT           "Version",IDC_VERSION,34,28,100,8
-    LTEXT           "If this program works, it was",IDC_STATIC,34,55,100,8
     LTEXT           "Build Date",IDC_BUILDDATE,34,39,100,8
+    LTEXT           "If this program works, it was",IDC_STATIC,34,55,100,8
+    LTEXT           "written by Kenneth Evans, Jr.",IDC_AUTHOR,34,66,100,8
+    LTEXT           "Copyright (C) 2001-2019",IDC_COPYRIGHT,34,85,98,8
 END
 
 IDD_PROGRESS DIALOG 0, 0, 150, 50
@@ -528,8 +528,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,1,0,0
- PRODUCTVERSION 2,1,0,0
+ FILEVERSION 2,2,0,0
+ PRODUCTVERSION 2,2,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -547,12 +547,12 @@ BEGIN
             VALUE "Comments", "GPS Data and Mapping Program for Garmin eTrex"
             VALUE "CompanyName", "kenevans.net"
             VALUE "FileDescription", "GPSLink"
-            VALUE "FileVersion", "2.1.0.0"
+            VALUE "FileVersion", "2.2.0.0"
             VALUE "InternalName", "GPSLink"
             VALUE "LegalCopyright", "Copyright © 2001-2017"
             VALUE "OriginalFilename", "GPSLink.exe"
             VALUE "ProductName", "GPSLink"
-            VALUE "ProductVersion", "2.1.0.0"
+            VALUE "ProductVersion", "2.2.0.0"
         END
     END
     BLOCK "VarFileInfo"

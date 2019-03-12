@@ -1858,10 +1858,10 @@ LRESULT CALLBACK calibrateDlgProc(HWND hDlg, UINT message,
 				_stprintf(szText,_T("%.6f"),pBlock->getLongitude());
 				Edit_SetText(hwEdit,szText);
 				hwEdit=GetDlgItem(hDlg,IDC_NAMEENTRY);
-				_stprintf(szText,_T("%s"),pBlock->getIdent());
 				LPWSTR unicodeString=NULL;
 				ansiToUnicode(pBlock->getIdent(),&unicodeString);
 				if(unicodeString) {
+					_stprintf(szText, _T("%s"), unicodeString);
 					Edit_SetText(hwEdit,unicodeString);
 					free(unicodeString);
 				} else {

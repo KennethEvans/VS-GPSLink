@@ -968,13 +968,13 @@ LRESULT CALLBACK aboutDlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 		if(!status) {
 			Static_SetText(hCtrl,_T("Version 1.0"));
 		} else {
-			_stprintf(szText,_T("Version: %s"),fileVersion);
+			_stprintf(szText, _T("Version: %s"), fileVersion);
 			Static_SetText(hCtrl,szText);
 		}
 
 		// Fill in the build date
 		hCtrl=GetDlgItem(hDlg,IDC_BUILDDATE);
-		_tprintf(szText,"Built %s %s",_T(__DATE__),_T(__TIME__));
+		_stprintf(szText, _T("Built %s %s"), _T(__DATE__), _T(__TIME__));
 		Static_SetText(hCtrl,szText);
 
 		return TRUE;

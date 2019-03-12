@@ -77,9 +77,13 @@ BOOL CGPXParser::validate(TCHAR *type, unsigned flag)
 }
 
 CWaypoint *CGPXParser::createWaypoint(BOOL checkedIn) {
-	if(!validate(_T("wpt"), GPX_CHECK_NAME|GPX_CHECK_SYM|
-		GPX_CHECK_LAT|GPX_CHECK_LON|GPX_CHECK_ELE)) {
-			return NULL;
+	//if (!validate(_T("wpt"), GPX_CHECK_NAME | GPX_CHECK_SYM |
+	//	GPX_CHECK_LAT | GPX_CHECK_LON | GPX_CHECK_ELE)) {
+	//	return NULL;
+	//}
+	if (!validate(_T("wpt"), GPX_CHECK_NAME | GPX_CHECK_SYM |
+		GPX_CHECK_LAT | GPX_CHECK_LON)) {
+		return NULL;
 	}
 	CWaypoint *waypoint=new CWaypoint(checkedIn,name,lat,lon,ele,sym);
 	return waypoint;
@@ -94,15 +98,18 @@ CRoute *CGPXParser::createRoute(BOOL checkedIn) {
 }
 
 CTrack *CGPXParser::createTrack(BOOL checkedIn) {
-	if(!validate(_T("trk"), GPX_CHECK_NAME)) {
-		return NULL;
-	}
+	//if(!validate(_T("trk"), GPX_CHECK_NAME)) {
+	//	return NULL;
+	//}
 	CTrack *track=new CTrack(checkedIn,name);
 	return track;
 }
 
 CTrackpoint *CGPXParser::createTrackpoint(BOOL checkedIn, BYTE startTrack) {
-	if(!validate(_T("trkpt"), GPX_CHECK_LAT|GPX_CHECK_LON|GPX_CHECK_ELE)) {
+	//if (!validate(_T("trkpt"), GPX_CHECK_LAT | GPX_CHECK_LON | GPX_CHECK_ELE)) {
+	//	return NULL;
+	//}
+	if (!validate(_T("trkpt"), GPX_CHECK_LAT | GPX_CHECK_LON)) {
 		return NULL;
 	}
 	if(time) {
